@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
-const PreviewWrapper = styled(Link)`
+const Wrapper = styled(Link)`
   display: block;
   position: relative;
   width: 100%;
@@ -12,7 +12,7 @@ const PreviewWrapper = styled(Link)`
   overflow: hidden;
 `;
 
-const StyledImage = styled(Image)`
+const StyledImg = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -32,18 +32,40 @@ const StyledImage = styled(Image)`
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   &:hover:before {
     opacity: 0.1;
   }
 `;
 
-const Preview = ({ background, slug, children }) => (
-  <PreviewWrapper to={`articles/${slug}`}>
-    <StyledImage fluid={background} />
-    {children}
-  </PreviewWrapper>
+const PreviewInfoLabel = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  width: 80%;
+  min-height: 40px;
+  background-color: black;
+  color: white;
+  padding: 5px 15px;
+  pointer-events: none;
+
+  h2,
+  p {
+    margin: 5px;
+  }
+`;
+
+const StyledImage = ({ title, excerpt, background, slug, type }) => (
+  <Wrapper to={`articles/${slug}`}>
+    <StyledImg fluid={background} />
+    {type === 'article' && (
+      <PreviewInfoLabel>
+        <h2>{title}</h2>
+        <p>{excerpt}</p>
+      </PreviewInfoLabel>
+    )}
+  </Wrapper>
 );
 
-export default Preview;
+export default StyledImage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
+import StyledImage from '../components/StyledImage/StyledImage';
 import PageInfo from '../components/PageInfo/PageInfo';
 
 const ArticlesWrapper = styled.div`
@@ -26,7 +26,8 @@ const ArticlesPage = ({ data }) => {
       <ArticlesWrapper>
         {nodes.map(
           ({ excerpt, frontmatter: { title, featuredImage, slug } }) => (
-            <ArticlePreview
+            <StyledImage
+              type="article"
               title={title}
               excerpt={excerpt}
               background={featuredImage.childImageSharp.fluid}
