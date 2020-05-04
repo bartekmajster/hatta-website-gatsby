@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ed8e5a-51cb-4414-acb8-ca33b426bd30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/about_photo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LightBox/LightBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useDetectOutsideClick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/globalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/globalStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticlePreview/ArticlePreview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageInfo/PageInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageInfo/PageInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StyledImage/StyledImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StyledImage/StyledImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gallery.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,23 +52,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hooks" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/hooks" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -78,7 +85,7 @@
       <updated>1588354718031</updated>
       <workItem from="1588354723577" duration="3053000" />
       <workItem from="1588373355624" duration="15951000" />
-      <workItem from="1588587269681" duration="4790000" />
+      <workItem from="1588587269681" duration="17278000" />
     </task>
     <servers />
   </component>
@@ -89,10 +96,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2315" y="145" key="#ESLint" timestamp="1588358451212">
+    <state x="2315" y="145" key="#ESLint" timestamp="1588613268322">
       <screen x="1680" y="-135" width="1920" height="1080" />
     </state>
-    <state x="2315" y="145" key="#ESLint/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588358451212" />
+    <state x="2315" y="145" key="#ESLint/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588613268322" />
     <state x="2274" y="90" key="#Inspections" timestamp="1588373961000">
       <screen x="1680" y="-135" width="1920" height="1080" />
     </state>
@@ -102,10 +109,15 @@
     </state>
     <state x="2378" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588375275975" />
     <state x="611" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588508207104" />
-    <state x="2149" y="44" key="SettingsEditor" timestamp="1588502367120">
-      <screen x="1680" y="-135" width="1920" height="1080" />
+    <state x="428" y="267" key="IDE.errors.dialog" timestamp="1588627940235">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="428" y="267" key="IDE.errors.dialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588627940235" />
+    <state x="370" y="174" key="SettingsEditor" timestamp="1588630961879">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="2149" y="44" key="SettingsEditor/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588502367120" />
+    <state x="370" y="174" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1588630961879" />
     <state x="2305" y="106" width="670" height="676" key="search.everywhere.popup" timestamp="1588608000258">
       <screen x="1680" y="-135" width="1920" height="1080" />
     </state>

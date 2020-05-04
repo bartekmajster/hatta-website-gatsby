@@ -1,15 +1,30 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Image from 'gatsby-image';
 
-const Wrapper = styled(Link)`
+const WrapperStyle = css`
   display: block;
   position: relative;
   width: 100%;
   height: 340px;
   background-color: hsl(0, 0%, 95%);
   overflow: hidden;
+`;
+
+const LinkWrapper = styled(Link)`
+  ${WrapperStyle}
+`;
+
+const Wrapper = styled.div`
+  ${WrapperStyle};
+  cursor: pointer;
+
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      cursor: default;
+    `}
 `;
 
 const StyledImg = styled(Image)`
@@ -32,11 +47,22 @@ const StyledImg = styled(Image)`
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
   &:hover:before {
     opacity: 0.1;
   }
+
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      &:hover {
+        transform: scale(1);
+      }
+      &:hover:before {
+        opacity: 0;
+      }
+    `}
 `;
 
 const PreviewInfoLabel = styled.div`
@@ -56,16 +82,27 @@ const PreviewInfoLabel = styled.div`
   }
 `;
 
-const StyledImage = ({ title, excerpt, background, slug, type }) => (
-  <Wrapper to={`articles/${slug}`}>
-    <StyledImg fluid={background} />
-    {type === 'article' && (
+const StyledImage = ({
+  title,
+  excerpt,
+  background,
+  slug,
+  type,
+  openModal,
+  isOpen,
+}) =>
+  type === 'article' ? (
+    <LinkWrapper to={`articles/${slug}`}>
+      <StyledImg fluid={background} />
       <PreviewInfoLabel>
         <h2>{title}</h2>
         <p>{excerpt}</p>
       </PreviewInfoLabel>
-    )}
-  </Wrapper>
-);
+    </LinkWrapper>
+  ) : (
+    <Wrapper onClick={() => openModal()} isOpen={isOpen}>
+      <StyledImg fluid={background} isOpen={isOpen} />
+    </Wrapper>
+  );
 
 export default StyledImage;

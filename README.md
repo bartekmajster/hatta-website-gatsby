@@ -1,5 +1,5 @@
 <h1 align="center">
-  Hatta website
+  Hatta website 🛠WORK IN PROGRESS⚙️
 </h1>
 
 Gatsby website form [this](https://eduweb.pl/programowanie-i-www/reactjs/gatsby-generator-react) tutorial, but with my individual improves
