@@ -5,17 +5,62 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-layout`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/data/articles`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`400`, `600`, `700`],
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prettier-eslint',
+      options: {
+        prettier: {
+          patterns: [
+            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
+            '**/*.{css,scss,less}',
+            '**/*.{json,json5}',
+            '**/*.{graphql}',
+            '**/*.{md,mdx}',
+            '**/*.{html}',
+            '**/*.{yaml,yml}',
+          ],
+        },
+        eslint: {
+          patterns: '**/*.{js,jsx,ts,tsx}',
+          customOptions: {
+            fix: true,
+            cache: true,
+          },
+        },
+      },
+    },
+    /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -26,9 +71,9 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-    },
+    }, */
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`
   ],
-}
+};
