@@ -13,9 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 80px 86px 0;
     font-family: 'Montserrat',sans-serif;
-    overflow-x: hidden;
   }
 
   button {

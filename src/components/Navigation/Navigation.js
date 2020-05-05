@@ -9,7 +9,7 @@ const NavigationWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-family: 'Montserrat';
+  z-index: 999;
 
   a {
     text-decoration: none;
@@ -21,11 +21,19 @@ const Logo = styled.span`
   font-weight: 700;
   font-size: 20px;
   margin-right: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 34px;
+  }
 `;
 
 const NavigationList = styled.ul`
   list-style: none;
   display: flex;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
 `;
 
 const NavigationListItem = styled.li`

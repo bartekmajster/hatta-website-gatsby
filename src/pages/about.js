@@ -9,32 +9,62 @@ const ContentWrapper = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
 
   h1 {
     font-size: 52px;
-    margin: 0;
+    margin: 20px 0 0 0;
     width: 60%;
     line-height: 0.9;
+    padding: 0;
   }
 
   p {
     font-size: 18px;
     line-height: 160%;
     letter-spacing: 0.5px;
-    margin: 60px 0 40px;
     width: 60%;
+    padding: 0;
+    margin: 0;
+  }
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 90%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+    h1,
+    h2,
+    p {
+      width: 100%;
+    }
   }
 `;
 
 const StyledImage = styled(Image)`
   position: absolute !important;
+  z-index: 999;
   top: 0;
   right: 0;
   width: 40%;
   height: 100vh;
   object-fit: cover;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 20px;
+    position: relative !important;
+    width: 100%;
+    height: 60vh;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
+    margin-top: 40px;
+  }
 `;
 
 const StyledHr = styled.div`
@@ -46,6 +76,7 @@ const StyledHr = styled.div`
 
 const AboutPage = ({ data }) => (
   <>
+    <StyledImage fluid={data.file.childImageSharp.fluid} />
     <ContentWrapper>
       <h1>About</h1>
       <p>
@@ -65,7 +96,6 @@ const AboutPage = ({ data }) => (
       <h2>Abigail Donutdough</h2>
       <StyledHr />
     </ContentWrapper>
-    <StyledImage fluid={data.file.childImageSharp.fluid} />
   </>
 );
 

@@ -11,12 +11,12 @@ const StyledWrapper = styled.div`
   left: 0;
 
   &:before {
-    position: absolute;
+    content: '';
+    position: fixed;
     top: 0;
     left: 0;
-    content: '';
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: black;
     opacity: 0.5;
   }
@@ -27,8 +27,21 @@ const InnerWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 900px;
+  width: 1000px;
+  height: 700px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 700px;
+    height: 400px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 600px;
+    height: 300px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 400px;
+    height: 200px;
+  }
 `;
 
 const LightBox = ({ modal, id }) => {
@@ -37,7 +50,7 @@ const LightBox = ({ modal, id }) => {
       allFile(filter: { name: { regex: "/gallery/" } }) {
         nodes {
           childImageSharp {
-            fluid(maxWidth:1200,maxHeight: 900, quality: 100) {
+            fluid(maxWidth: 1000, maxHeight: 700, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }

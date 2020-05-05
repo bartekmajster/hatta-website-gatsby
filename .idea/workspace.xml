@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ed8e5a-51cb-4414-acb8-ca33b426bd30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/gallery/gallery_07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LightBox/LightBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useDetectOutsideClick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Burger/Burger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StyledImage/StyledImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StyledImage/StyledImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/about_photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/about_photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/globalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/globalStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LightBox/LightBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LightBox/LightBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/articles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <updated>1588354718031</updated>
       <workItem from="1588354723577" duration="3053000" />
       <workItem from="1588373355624" duration="15951000" />
-      <workItem from="1588587269681" duration="17278000" />
+      <workItem from="1588587269681" duration="27861000" />
     </task>
     <servers />
   </component>
@@ -118,9 +120,9 @@
     </state>
     <state x="2149" y="44" key="SettingsEditor/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588502367120" />
     <state x="370" y="174" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1588630961879" />
-    <state x="2305" y="106" width="670" height="676" key="search.everywhere.popup" timestamp="1588608000258">
+    <state x="2305" y="106" width="670" height="676" key="search.everywhere.popup" timestamp="1588696691208">
       <screen x="1680" y="-135" width="1920" height="1080" />
     </state>
-    <state x="2305" y="106" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588608000258" />
+    <state x="2305" y="106" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/1680.-135.1920.1080@1680.-135.1920.1080" timestamp="1588696691208" />
   </component>
 </project>

@@ -12,17 +12,57 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  padding-right: 10px;
 
   h1 {
     font-size: 105px;
     margin: 0;
-    width: 60%;
+    width: 80%;
     line-height: 0.9;
   }
 
   p {
     margin: 60px 0 40px;
     width: 40%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding-right: 20px;
+    width: 50%;
+
+    h1 {
+      width: 100%;
+      font-size: 95px;
+    }
+
+    p {
+      margin: 60px 0 40px;
+      width: 60%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+
+    h1 {
+      width: 70%;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
+    h1 {
+      width: 90%;
+      font-size: 75px;
+    }
   }
 `;
 
@@ -33,6 +73,14 @@ const StyledImage = styled(Image)`
   width: 40%;
   height: 100vh;
   object-fit: cover;
+
+  @media (max-width: 1100px) {
+    width: 50%;
+  }
+
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 `;
 
 const IndexPage = ({ data }) => (
