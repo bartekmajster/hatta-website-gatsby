@@ -4,12 +4,13 @@ module.exports = {
   siteMetadata: {
     title: `Hatta Website`,
     description: `Architects create designs for new construction projects, alterations and redevelopments.`,
-    urr: `https://wizardly-kowalevski-f509e6.netlify.app/`,
+    siteUrl: `https://wizardly-kowalevski-f509e6.netlify.app/`,
     image: `src/assets/images/hatta.png`,
     author: `bartekmajster`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-layout`,
