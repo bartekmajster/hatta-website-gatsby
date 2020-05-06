@@ -2,9 +2,11 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Hatta Website`,
+    description: `Architects create designs for new construction projects, alterations and redevelopments.`,
+    urr: `https://wizardly-kowalevski-f509e6.netlify.app/`,
+    image: `src/assets/images/hatta.png`,
+    author: `bartekmajster`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
@@ -72,6 +74,6 @@ module.exports = {
         icon: `src/assets/images/hatta.png`,
       },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 };

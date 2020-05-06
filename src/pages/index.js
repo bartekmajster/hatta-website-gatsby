@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { graphql, Link } from 'gatsby';
 import Button from '../components/Button/Button';
+import SEO from '../components/Seo/seo';
 
 const ContentWrapper = styled.div`
   width: 60%;
@@ -94,6 +95,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <SEO title="Home" />
       <ContentWrapper>
         <h1>{title}</h1>
         <p>{description}</p>

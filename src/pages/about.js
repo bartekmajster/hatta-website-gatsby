@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { graphql } from 'gatsby';
+import SEO from '../components/Seo/seo';
 
 const ContentWrapper = styled.div`
   width: 60%;
@@ -87,6 +88,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <>
+      <SEO title="About" />
       <StyledImage fluid={fluid} />
       <ContentWrapper>
         <h1>About</h1>

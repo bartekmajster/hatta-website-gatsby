@@ -5,6 +5,7 @@ import PageInfo from '../components/PageInfo/PageInfo';
 import StyledImage from '../components/StyledImage/StyledImage';
 import useDetectOutsideClick from '../hooks/useDetectOutsideClick';
 import LightBox from '../components/LightBox/LightBox';
+import SEO from '../components/Seo/seo';
 
 const ArticlesWrapper = styled.div`
   display: grid;
@@ -42,6 +43,7 @@ const GalleryPage = ({
 
   return (
     <>
+      <SEO title="Gallery" />
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
         {nodes[0].image.map(item => (

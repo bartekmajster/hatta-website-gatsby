@@ -4,6 +4,7 @@ import slugify from 'slugify';
 import { graphql } from 'gatsby';
 import StyledImage from '../components/StyledImage/StyledImage';
 import PageInfo from '../components/PageInfo/PageInfo';
+import SEO from '../components/Seo/seo';
 
 const ArticlesWrapper = styled.div`
   display: grid;
@@ -30,6 +31,7 @@ const ArticlesPage = ({ data }) => {
   } = data;
   return (
     <>
+      <SEO title="Articles" />
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
         {nodes.map(({ title, featuredImage }) => (

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import PageInfo from '../components/PageInfo/PageInfo';
 import Button from '../components/Button/Button';
+import SEO from '../components/Seo/seo';
 
 const StyledInput = styled.input`
   display: block;
@@ -38,6 +39,7 @@ const pageData = {
 
 const ContactPage = () => (
   <>
+    <SEO title="Contact" />
     <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
     <Formik
       initialValues={{ name: '', email: '', message: '' }}
