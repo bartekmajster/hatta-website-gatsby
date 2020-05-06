@@ -26,7 +26,7 @@ const pageData = {
 };
 const GalleryPage = ({
   data: {
-    allFile: { nodes },
+    allDatoCmsGallery: { nodes },
   },
 }) => {
   const [isModalOpen, setTooltipVisibility] = useState(false);
@@ -44,12 +44,12 @@ const GalleryPage = ({
     <>
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
-        {nodes.map(item => (
+        {nodes[0].image.map(item => (
           <StyledImage
             type="galleryImage"
-            background={item.childImageSharp.fluid}
-            key={item.id}
-            openModal={() => handleOpen(item.id)}
+            background={item.fluid}
+            key={item.originalId}
+            openModal={() => handleOpen(item.originalId)}
             isOpen={isModalOpen}
           />
         ))}
@@ -60,15 +60,15 @@ const GalleryPage = ({
 };
 
 export const query = graphql`
-  {
-    allFile(filter: { name: { regex: "/gallery/" } }) {
+  query gallery {
+    allDatoCmsGallery {
       nodes {
-        childImageSharp {
-          fluid(quality: 70) {
-            ...GatsbyImageSharpFluid_tracedSVG
+        image {
+          originalId
+          fluid(maxWidth: 300, maxHeight: 200) {
+            ...GatsbyDatoCmsFluid_tracedSVG
           }
         }
-        id
       }
     }
   }

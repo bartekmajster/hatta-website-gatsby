@@ -83,28 +83,37 @@ const StyledImage = styled(Image)`
   }
 `;
 
-const IndexPage = ({ data }) => (
-  <>
-    <ContentWrapper>
-      <h1>Your new space</h1>
-      <p>
-        While artists work from real to the abstract,architects must work from
-        the abstract to real.
-      </p>
-      <Button as={Link} to="/gallery">
-        projects
-      </Button>
-    </ContentWrapper>
-    <StyledImage fluid={data.file.childImageSharp.fluid} />
-  </>
-);
+const IndexPage = ({ data }) => {
+  const {
+    datoCmsMainPage: {
+      image: { fluid },
+      title,
+      description,
+    },
+  } = data;
+
+  return (
+    <>
+      <ContentWrapper>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <Button as={Link} to="/gallery">
+          projects
+        </Button>
+      </ContentWrapper>
+      <StyledImage fluid={fluid} />
+    </>
+  );
+};
 
 export const query = graphql`
-  {
-    file(name: { eq: "hero" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 1200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
+  query mainPage {
+    datoCmsMainPage {
+      title
+      description
+      image {
+        fluid(maxWidth: 800, maxHeight: 1200) {
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
     }

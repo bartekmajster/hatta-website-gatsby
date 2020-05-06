@@ -46,26 +46,28 @@ const InnerWrapper = styled.div`
 
 const LightBox = ({ modal, id }) => {
   const data = useStaticQuery(graphql`
-    {
-      allFile(filter: { name: { regex: "/gallery/" } }) {
+    query singleImage {
+      allDatoCmsGallery {
         nodes {
-          childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 700, quality: 100) {
-              ...GatsbyImageSharpFluid_noBase64
+          image {
+            originalId
+            fluid(maxWidth: 300, maxHeight: 200) {
+              ...GatsbyDatoCmsFluid_tracedSVG
             }
           }
-          id
         }
       }
     }
   `);
 
-  const [image] = data.allFile.nodes.filter(item => item.id === id);
+  const [image] = data.allDatoCmsGallery.nodes[0].image.filter(
+    item => item.originalId === id
+  );
 
   return (
     <StyledWrapper>
       <InnerWrapper ref={modal}>
-        <Image fluid={image.childImageSharp.fluid} />
+        <Image fluid={image.fluid} />
       </InnerWrapper>
     </StyledWrapper>
   );
