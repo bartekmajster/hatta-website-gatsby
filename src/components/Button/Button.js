@@ -9,6 +9,7 @@ const Button = styled.button`
   font-weight: 600;
   flex-shrink: 0;
   outline: black;
+  text-decoration: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 20px;

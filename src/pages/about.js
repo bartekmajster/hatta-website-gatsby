@@ -45,6 +45,8 @@ const ContentWrapper = styled.div`
       width: 100%;
     }
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    min-height: 800px;
 `;
 
 const StyledImage = styled(Image)`
@@ -62,7 +64,7 @@ const StyledImage = styled(Image)`
     width: 100%;
     height: 60vh;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: 40px;
   }
 `;

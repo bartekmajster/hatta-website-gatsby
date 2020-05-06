@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Button from '../components/Button/Button';
 
 const ContentWrapper = styled.div`
@@ -58,7 +58,7 @@ const ContentWrapper = styled.div`
       font-size: 20px;
     }
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     h1 {
       width: 90%;
       font-size: 75px;
@@ -91,7 +91,9 @@ const IndexPage = ({ data }) => (
         While artists work from real to the abstract,architects must work from
         the abstract to real.
       </p>
-      <Button>projects</Button>
+      <Button as={Link} to="/gallery">
+        projects
+      </Button>
     </ContentWrapper>
     <StyledImage fluid={data.file.childImageSharp.fluid} />
   </>
