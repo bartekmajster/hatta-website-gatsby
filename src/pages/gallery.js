@@ -65,7 +65,7 @@ export const query = graphql`
       nodes {
         image {
           originalId
-          fluid(maxWidth: 300, maxHeight: 200) {
+          fluid(maxWidth: 400, maxHeight: 300) {
             ...GatsbyDatoCmsFluid_tracedSVG
           }
         }

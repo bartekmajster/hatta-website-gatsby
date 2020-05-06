@@ -27,20 +27,24 @@ const InnerWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 700px;
+  min-width: 50%;
+  max-height: 90%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    object-fit: contain;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    width: 700px;
-    height: 400px;
+    max-width: 80%;
+    min-height: 80%;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    width: 600px;
-    height: 300px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 400px;
-    height: 200px;
+    width: 95%;
+    height: 80%;
   }
 `;
 
@@ -51,8 +55,8 @@ const LightBox = ({ modal, id }) => {
         nodes {
           image {
             originalId
-            fluid(maxWidth: 300, maxHeight: 200) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+            fixed(width: 1200, height: 800) {
+              ...GatsbyDatoCmsFixed_noBase64
             }
           }
         }
@@ -67,7 +71,7 @@ const LightBox = ({ modal, id }) => {
   return (
     <StyledWrapper>
       <InnerWrapper ref={modal}>
-        <Image fluid={image.fluid} />
+        <Image fixed={image.fixed} />
       </InnerWrapper>
     </StyledWrapper>
   );
