@@ -2,11 +2,12 @@
   Hatta website 
 </h1>
 
-# [Live preview](https://5eb2eda7adbab8e173e7cf03--wizardly-kowalevski-f509e6.netlify.app/)
+# [Live website](https://5eb2eda7adbab8e173e7cf03--wizardly-kowalevski-f509e6.netlify.app/)
 
+📱 🖥 Mobile and desktop preview:
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://5eb2eda7adbab8e173e7cf03--wizardly-kowalevski-f509e6.netlify.app/">
+    <img alt="Gatsby" src="https://i.imgur.com/9rxsMDx.png"/>
   </a>
 </p>
 
