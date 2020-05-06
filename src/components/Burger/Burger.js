@@ -42,11 +42,11 @@ const StyledBurger = styled.button`
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
-  
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     right: 20px;
   }

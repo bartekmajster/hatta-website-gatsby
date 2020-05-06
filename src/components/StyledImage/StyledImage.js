@@ -82,14 +82,7 @@ const PreviewInfoLabel = styled.div`
   }
 `;
 
-const StyledImage = ({
-  title,
-  background,
-  slug,
-  type,
-  openModal,
-  isOpen,
-}) =>
+const StyledImage = ({ title, background, slug, type, openModal, isOpen }) =>
   type === 'article' ? (
     <LinkWrapper to={`articles/${slug}`}>
       <StyledImg fluid={background} />

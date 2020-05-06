@@ -19,13 +19,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `${__dirname}/src/data/articles`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -44,7 +37,7 @@ module.exports = {
       options: {
         prettier: {
           patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
+            '**/*.{js,jsx,ts,tsx}',
             '**/*.{css,scss,less}',
             '**/*.{json,json5}',
             '**/*.{graphql}',

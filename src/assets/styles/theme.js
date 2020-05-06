@@ -3,5 +3,5 @@ export const mainTheme = {
     mobile: '500px',
     tablet: '750px',
     desktop: '1100px',
-  }
+  },
 };
