@@ -15,6 +15,10 @@ const NavigationWrapper = styled.nav`
     text-decoration: none;
     color: inherit;
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    left: 20px;
+  }
 `;
 
 const Logo = styled.span`

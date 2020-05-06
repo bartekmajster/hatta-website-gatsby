@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import slugify from 'slugify';
 import { graphql } from 'gatsby';
 import StyledImage from '../components/StyledImage/StyledImage';
 import PageInfo from '../components/PageInfo/PageInfo';
@@ -9,11 +10,11 @@ const ArticlesWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   padding-bottom: 50px;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}){
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
   }
 `;
@@ -25,24 +26,21 @@ const pageData = {
 
 const ArticlesPage = ({ data }) => {
   const {
-    allMdx: { nodes },
+    allDatoCmsArticle: { nodes },
   } = data;
   return (
     <>
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
-        {nodes.map(
-          ({ excerpt, frontmatter: { title, featuredImage, slug } }) => (
-            <StyledImage
-              type="article"
-              title={title}
-              excerpt={excerpt}
-              background={featuredImage.childImageSharp.fluid}
-              key={title}
-              slug={slug}
-            />
-          )
-        )}
+        {nodes.map(({ title, featuredImage }) => (
+          <StyledImage
+            type="article"
+            title={title}
+            background={featuredImage.fluid}
+            key={title}
+            slug={slugify(title, { lower: true })}
+          />
+        ))}
       </ArticlesWrapper>
     </>
   );
@@ -50,20 +48,14 @@ const ArticlesPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allMdx {
+    allDatoCmsArticle {
       nodes {
-        frontmatter {
-          title
-          slug
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 700, maxHeight: 500) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
+        title
+        featuredImage {
+          fluid(maxWidth: 700, maxHeight: 500) {
+            ...GatsbyDatoCmsFluid_tracedSVG
           }
         }
-        excerpt(pruneLength: 50)
       }
     }
   }

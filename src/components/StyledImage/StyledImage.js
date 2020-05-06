@@ -84,7 +84,6 @@ const PreviewInfoLabel = styled.div`
 
 const StyledImage = ({
   title,
-  excerpt,
   background,
   slug,
   type,
@@ -96,7 +95,6 @@ const StyledImage = ({
       <StyledImg fluid={background} />
       <PreviewInfoLabel>
         <h2>{title}</h2>
-        <p>{excerpt}</p>
       </PreviewInfoLabel>
     </LinkWrapper>
   ) : (

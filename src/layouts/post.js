@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
@@ -27,32 +26,57 @@ const StyledImage = styled(Image)`
 const PostLayout = ({ data }) => {
   return (
     <StyledWrapper>
-      <h1>{data.mdx.frontmatter.title}</h1>
-      <p>{data.mdx.frontmatter.author}</p>
-      <StyledImage
-        fluid={data.mdx.frontmatter.featuredImage.childImageSharp.fluid}
-      />
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <h1>{data.datoCmsArticle.title}</h1>
+      <p>{data.datoCmsArticle.author}</p>
+      <StyledImage fluid={data.datoCmsArticle.featuredImage.fluid} />
+      <div>
+        {data.datoCmsArticle.articleContent.map(item => {
+          const itemKey = Object.keys(item)[1];
+
+          switch (itemKey) {
+            case 'headingContent':
+              return <h2 key={item.id}>{item[itemKey]}</h2>;
+            case 'paragraphContent':
+              return <p key={item.id}>{item[itemKey]}</p>;
+            case 'imageData':
+              return <StyledImage fluid={item[itemKey].fluid} key={item.id} />;
+            default:
+              return null;
+          }
+        })}
+      </div>
     </StyledWrapper>
   );
 };
 
 export const query = graphql`
-  query querySingleArticle($slug: String!) {
-    mdx(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        slug
-        author
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 700, maxHeight: 500) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+  query postSingleArticle($id: String!) {
+    datoCmsArticle(id: { eq: $id }) {
+      title
+      author
+      featuredImage {
+        fluid(maxWidth: 700, maxHeight: 500) {
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
-      body
+      articleContent {
+        ... on DatoCmsParagraph {
+          paragraphContent
+          id
+        }
+        ... on DatoCmsHeading {
+          headingContent
+          id
+        }
+        ... on DatoCmsArticleImage {
+          imageData {
+            fluid(maxWidth: 700, maxHeight: 500) {
+              ...GatsbyDatoCmsFluid_tracedSVG
+            }
+          }
+          id
+        }
+      }
     }
   }
 `;

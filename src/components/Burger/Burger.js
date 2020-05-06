@@ -46,6 +46,10 @@ const StyledBurger = styled.button`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    right: 20px;
+  }
 `;
 
 const Burger = ({ open, setOpen }) => {
